@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpeak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+    
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-msg">
+            <h1>SafeSpeak</h1>
+        </div>
+        <div class="hero-msg2">
+            <h2>Detect Hate Speech Online</h2>
+        </div>
+        <div class="nav-viewmore">
+            <div class="viewmore-icon">
+                <a href="{{ url_for('detection') }}" style="text-decoration: none; color: white;">
+                    <p>Learn More</p>
+                </a>
+            </div>
+        </div>   
+    </section>
+
+    <section class="about-section">
+        <div class="about-msg">
+            <h3>Our Mission</h3>
+            <p>We aim to create a safer online community by identifying and mitigating hate speech and offensive language using machine learning models.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 SafeSpeak</p>
+        </div>
+    </footer>
+    
+    <script>
+        function detectSpeech() {
+            console.log("Detect button clicked."); // Log button click
+            var inputText = document.getElementById("input-textarea").value;
+            var result = document.getElementById("result");
+    
+            if (!inputText) {
+                result.innerHTML = "<p style='color: red;'>Please enter some text to analyze.</p>";
+                return;
+            }
+    
+            console.log("Input text:", inputText); // Log the input text
+            
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ tweet: inputText }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.error("Error response:", response); // Log error response
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Response data:", data); // Log response data
+                result.innerHTML = `<p style='color: ${data.color};'>${data.result}</p>`;
+            })
+            .catch(error => {
+                console.error("Fetch error:", error); // Log fetch error
+                result.innerHTML = "<p style='color: red;'>An error occurred while processing your request.</p>";
+            });
+        }
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {         
+    background-color: #000000;
+    color: #000000;
+}
+
+.navbar {
+    background-color: #fafafa;
+    color: #000000; /* text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    font-size: 25px;
+}
+
+.hero-section {
+    background-image: url("Unknown.gif");
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-msg {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.hero-msg2 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.viewmore-icon {
+    background-color: #ff4757;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.about-section {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-msg h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-msg p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.features-section {
+    padding: 50px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 50px;
+    color: #ff4757;
+    margin-bottom: 20px;
+}
+
+.feature-item h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.impact-section {
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.impact-section h3 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.impact-section p {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+.detection-section {
+    padding: 50px;
+    background-color: #fafafa;
+    text-align: center;  /* Center align text */
+    min-height: 80vh;
+}
+
+.detection-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 70%; /* width of the container */
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #ff4757; /* red shade for the detect button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* font size */
+}
+
+button:hover {
+    background-color: #e84118;
+}
+
+#result p {
+    font-size: 20px;
+    margin-top: 20px;
+}
