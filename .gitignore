@@ -1,34 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments
+.venv/
+env/
+venv/
+
 # macOS
 .DS_Store
 
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.env
-.env.*
-venv/
-.venv/
-pip-wheel-metadata/
-*.sqlite3
+# Model files
+models/*.joblib
+models/*.pkl
 
-# VS Code
-.vscode/
-# macOS
-.DS_Store
+# Logs
+*.log
 
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.env
-.env.*
-venv/
-.venv/
-pip-wheel-metadata/
-*.sqlite3
-
-# VS Code
-.vscode/
-
-
+# Flask
+instance/
